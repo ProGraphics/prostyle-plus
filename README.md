@@ -1,1 +1,1 @@
-Commercial use of this software requires membership.
+ProStyle Plus is a set of premium extensions for [ProStyle](http://prostyle.io). These extensions are free for personal use and may be licensed commercially per website domain name.  See [http://prostyle.io/plus](http://prostyle.io/plus) for more information about the extensions and the license options. [the license]().
