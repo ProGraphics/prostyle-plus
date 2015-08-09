@@ -62,9 +62,14 @@ module.exports = function (grunt) {
             }
         },
         copy: {
-            extensions: {
+            to_prostyle_js: {
                 files: [
                     {expand: true, cwd: "js", src:"*.js", dest:"../prostyle.js/js/extensions/"}
+                ]
+            },
+            to_prostyle_io: {
+                files: [
+                    {expand: true, cwd: "js", src:"*.min.js", dest:"../prostyle.io/assets/js/"}
                 ]
             }
         }
