@@ -9,6 +9,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        proVersion: "0.19.0",
         ts: {
             flow_pageStack: {
                 src: ["src/flows/PageStack/**/*.ts"], out: "js/prostyle.flow.pageStack.js"
@@ -38,6 +39,19 @@ module.exports = function (grunt) {
             banner: {
                 options: {
                     banner: '/*!\n' +
+                    ' * VERSION: <%= proVersion %>\n' +
+                    ' * DATE: <%= grunt.template.today("dd-mmm-yyyy") %>\n' +
+                    ' * UPDATES AND DOCS AT: https://prostyle.io/plus/\n' +
+                    ' * \n' +
+                    ' * This file is part of ProStyle Plus, a set of premium extensions for ProStyle. It may be\n' +
+                    ' * used for free for personal projects or licensed per website domain name for commercial use.\n' +
+                    ' * \n' +
+                    ' * @copyright - Copyright (c) 2013-<%= grunt.template.today("yyyy") %>, Pro Graphics, Inc. All rights reserved. \n' +
+                    ' * @license - This work is subject to the terms at https://prostyle.io/plus/license/\n' +
+                    ' * @author: Gary Chamberlain, gary@pro.graphics.\n' +
+                    ' * \n' +
+                    ' **/\n',
+                    banner2: '/*!\n' +
                     ' * This file is part of ProStyle Plus, a set of premium extensions for ProStyle. It may be\n' +
                     ' * used for free for personal projects or licensed per website domain name for commercial use.\n' +
                     ' * @license: See http://prostyle.io/plus/license\n' +
