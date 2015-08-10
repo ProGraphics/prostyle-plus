@@ -11,11 +11,14 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         proVersion: "0.19.0",
         ts: {
+            controller_mouseWheel: {
+                src: ["src/Controllers/MouseWheel/**/*.ts"], out: "js/prostyle.controller.mousewheel.js"
+            },
             flow_pageStack: {
-                src: ["src/flows/PageStack/**/*.ts"], out: "js/prostyle.flow.pageStack.js"
+                src: ["src/Flows/PageStack/**/*.ts"], out: "js/prostyle.flow.pagestack.js"
             },
             item_simpleBarChart: {
-                src: ["src/items/SimpleBarChart/**/*.ts"], out: "js/prostyle.item.simpleBarChart.js"
+                src: ["src/Items/SimpleBarChart/**/*.ts"], out: "js/prostyle.item.simplebarchart.js"
             }
         },
         closurecompiler: {
@@ -24,14 +27,19 @@ module.exports = function (grunt) {
                 "language_in": "ECMASCRIPT5",
                 "max_processes": 5
             },
+            controllers: {
+                files: {
+                    "js/prostyle.controller.mousewheel.min.js": "js/prostyle.controller.mousewheel.js"
+                }
+            },
             flows: {
                 files: {
-                    "js/prostyle.flow.pageStack.min.js": "js/prostyle.flow.pageStack.js"
+                    "js/prostyle.flow.pagestack.min.js": "js/prostyle.flow.pagestack.js"
                 }
             },
             items: {
                 files: {
-                    "js/prostyle.item.simpleBarChart.min.js": "js/prostyle.item.simpleBarChart.js"
+                    "js/prostyle.item.simplebarchart.min.js": "js/prostyle.item.simplebarchart.js"
                 }
             }
         },
