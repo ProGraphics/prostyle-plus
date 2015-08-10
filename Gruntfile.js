@@ -11,6 +11,9 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         proVersion: "0.19.0",
         ts: {
+            controller_mouseMove: {
+                src: ["src/Controllers/MouseMove/**/*.ts"], out: "js/prostyle.controller.mousemove.js"
+            },
             controller_mouseWheel: {
                 src: ["src/Controllers/MouseWheel/**/*.ts"], out: "js/prostyle.controller.mousewheel.js"
             },
@@ -29,6 +32,7 @@ module.exports = function (grunt) {
             },
             controllers: {
                 files: {
+                    "js/prostyle.controller.mousemove.min.js": "js/prostyle.controller.mousemove.js",
                     "js/prostyle.controller.mousewheel.min.js": "js/prostyle.controller.mousewheel.js"
                 }
             },
