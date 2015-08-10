@@ -17,6 +17,9 @@ module.exports = function (grunt) {
             controller_mouseWheel: {
                 src: ["src/Controllers/MouseWheel/**/*.ts"], out: "js/prostyle.controller.mousewheel.js"
             },
+            controller_tap: {
+                src: ["src/Controllers/Tap/**/*.ts"], out: "js/prostyle.controller.tap.js"
+            },
             flow_pageStack: {
                 src: ["src/Flows/PageStack/**/*.ts"], out: "js/prostyle.flow.pagestack.js"
             },
@@ -33,7 +36,8 @@ module.exports = function (grunt) {
             controllers: {
                 files: {
                     "js/prostyle.controller.mousemove.min.js": "js/prostyle.controller.mousemove.js",
-                    "js/prostyle.controller.mousewheel.min.js": "js/prostyle.controller.mousewheel.js"
+                    "js/prostyle.controller.mousewheel.min.js": "js/prostyle.controller.mousewheel.js",
+                    "js/prostyle.controller.tap.min.js": "js/prostyle.controller.tap.js"
                 }
             },
             flows: {
