@@ -60,10 +60,10 @@ module ProStyle.Extensions.Controllers.Tap {
             this.canvas = canvas;
             this.player = player;
             
-            this.backDiv = ProStyle.Util.createChildDivElement(this.canvas.div);
-            this.playDiv = ProStyle.Util.createChildDivElement(this.canvas.div);
-            this.nextDiv = ProStyle.Util.createChildDivElement(this.canvas.div);
-            this.seekDiv = ProStyle.Util.createChildDivElement(this.canvas.div);
+            this.backDiv = ProStyle.Util.createChildDivElement(this.canvas.frame.div);
+            this.playDiv = ProStyle.Util.createChildDivElement(this.canvas.frame.div);
+            this.nextDiv = ProStyle.Util.createChildDivElement(this.canvas.frame.div);
+            this.seekDiv = ProStyle.Util.createChildDivElement(this.canvas.frame.div);
             this.player.stateChanged.on(this.stateChangedBound);
             this.resize();
             
@@ -125,14 +125,14 @@ module ProStyle.Extensions.Controllers.Tap {
         private next(m: MouseEvent) {
             this.player.playNextStep(true);
         }
-                
+
         private seek(m: MouseEvent) {
-            var pos = m.clientX;
-            var w = m.currentTarget["offsetWidth"];
-            var p = pos/w*100;
+            var rect = Util.getOffset(<HTMLDivElement>m.currentTarget);
+            var pos = m.pageX - rect.left;
+            var w = m.target["offsetWidth"];
             this.player.seek(pos/w, true);
         }
-        
+
         private stateChanged(paused: boolean) {
             if (this.cursors) {
                 if (paused) {
@@ -143,10 +143,10 @@ module ProStyle.Extensions.Controllers.Tap {
                 }
             }
         }
-        
+
         public resize() {
-            var cw = this.canvas.div.offsetWidth;
-            var ch = this.canvas.div.offsetHeight;
+            var cw = this.canvas.frame.div.offsetWidth;
+            var ch = this.canvas.frame.div.offsetHeight;
             
             var bw = cw * this.bwr;
             var pw = cw * this.pwr;
@@ -175,7 +175,7 @@ module ProStyle.Extensions.Controllers.Tap {
             this.seekDiv.style.width = cw + "px";
             this.seekDiv.style.height = sh + "px";
         }
-        
+
         public serialize(): any {
             return Tap.serialize(this);
         }

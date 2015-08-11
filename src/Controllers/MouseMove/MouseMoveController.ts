@@ -25,14 +25,14 @@ module ProStyle.Extensions.Controllers.MouseMove {
             this.stop();
             this.canvas = canvas;
             this.player = player;
-            canvas.div.addEventListener("mousemove", this.mousemoveBound);
-            canvas.div.addEventListener("mouseout", this.mouseoutBound);
+            canvas.frame.div.addEventListener("mousemove", this.mousemoveBound);
+            canvas.frame.div.addEventListener("mouseout", this.mouseoutBound);
         }
 
         public stop() {
             if (this.player !== undefined) {
-                this.canvas.div.removeEventListener("mousemove", this.mousemoveBound);
-                this.canvas.div.removeEventListener("mouseout", this.mouseoutBound);
+                this.canvas.frame.div.removeEventListener("mousemove", this.mousemoveBound);
+                this.canvas.frame.div.removeEventListener("mouseout", this.mouseoutBound);
                 this.canvas = undefined;
                 this.player = undefined;
             }
@@ -43,10 +43,14 @@ module ProStyle.Extensions.Controllers.MouseMove {
         }
         
         private mousemove(m: MouseEvent) {
-            var pos = m.clientX;
-            var w = m.currentTarget["offsetWidth"];
-            var p = pos/w*100;
+            var div = <HTMLDivElement>m.currentTarget;
+            var rect = Util.getOffset(div);
+            var pos = m.pageX - rect.left;
+            var w = div.offsetWidth;
+            console.log(div,pos,w);
             this.player.seek(this.posToSeek(pos/w));
+            m.stopPropagation();
+            m.preventDefault();
         }
         
         private posToSeek(pos: number): number {
