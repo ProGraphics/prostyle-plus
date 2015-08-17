@@ -45,7 +45,7 @@ module ProStyle.Extensions.Flows.PageStack {
                     pageAspectRatio: number,
                     public stacks: Types.Stacks) {
 
-            super(story, "pageStack", placement, defaultPageClass, pageAspectRatio, "pageStackPage");
+            super(story, "pageStack", placement, defaultPageClass, pageAspectRatio, "stackedpage");
         }
         
         public serialize(): any {
