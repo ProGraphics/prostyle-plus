@@ -1,8 +1,8 @@
 /// <reference path="../../../ts/prostyle.d.ts" />
-/// <reference path="SimpleBarChartItemModel.ts" />
-/// <reference path="SimpleBarChartPropertyTypes.ts" />
+/// <reference path="BarChartItemModel.ts" />
+/// <reference path="BarChartPropertyTypes.ts" />
 
-module ProStyle.Extensions.Items.SimpleBarChart {
+module ProStyle.Extensions.Items.BarChart {
 
     var DEFAULT_WH = 50; //% of container
     var DEFAULT_M = 1; //% of chart width
@@ -12,7 +12,7 @@ module ProStyle.Extensions.Items.SimpleBarChart {
     import Scripts = Models.Scripts;
     import Util = ProStyle.Util;
 
-    export function deserialize(itemSet: Models.IItemModelSet, json): SimpleBarChartItemModel {
+    export function deserialize(itemSet: Models.IItemModelSet, json): BarChartItemModel {
         var bars = Math.max(1, Math.min(Util.convertToNumber(Util.getSetup(json, "bars")), 100));
         var width = Math.max(0, Util.convertToNumber(Util.getSetup(json, "width"), DEFAULT_WH));
         var height = Math.max(0, Util.convertToNumber(Util.getSetup(json, "height"), DEFAULT_WH));
@@ -36,8 +36,8 @@ module ProStyle.Extensions.Items.SimpleBarChart {
             minDomainValue = swap;
         }
 
-        var propertyTypes = SimpleBarChartPropertyTypes.get();
-        var barPropertyTypes = SimpleBarChartPropertyTypes.getForBars();
+        var propertyTypes = BarChartPropertyTypes.get();
+        var barPropertyTypes = BarChartPropertyTypes.getForBars();
 
         var init = Serialization.PropertyListReader.read(itemSet.story, json.init, propertyTypes);
         var barsInit = Serialization.PropertyListReader.read(itemSet.story, json.barInit || json.barsInit, barPropertyTypes);
@@ -45,7 +45,7 @@ module ProStyle.Extensions.Items.SimpleBarChart {
         var scriptSet = Serialization.ScriptSetReader.readJson(itemSet, "Chart", json, [""], propertyTypes);
         var barsScriptSet = Serialization.ScriptSetReader.readJson(itemSet, "Bars", json, ["bar", "bars"], barPropertyTypes);
 
-        return new SimpleBarChartItemModel(itemSet, bars, width, height, margin, minDomainValue, maxDomainValue,
+        return new BarChartItemModel(itemSet, bars, width, height, margin, minDomainValue, maxDomainValue,
                                            init, scriptSet, barsInit, barsScriptSet);
     }
 }

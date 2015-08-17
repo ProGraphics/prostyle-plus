@@ -1,8 +1,8 @@
 /// <reference path="../../../ts/prostyle.d.ts" />
-/// <reference path="SimpleBarChartItemModel.ts" />
-/// <reference path="SimpleBarChartPropertyTypes.ts" />
+/// <reference path="BarChartItemModel.ts" />
+/// <reference path="BarChartPropertyTypes.ts" />
 
-module ProStyle.Extensions.Items.SimpleBarChart {
+module ProStyle.Extensions.Items.BarChart {
 
     var DEFAULT_WH = 50; //% of container
     var DEFAULT_M = 1; //% of chart width
@@ -12,7 +12,7 @@ module ProStyle.Extensions.Items.SimpleBarChart {
     import Scripts = Models.Scripts;
     import Util = ProStyle.Util;
 
-    export function serialize(model: SimpleBarChartItemModel): any {
+    export function serialize(model: BarChartItemModel): any {
         return {};
     }
 }

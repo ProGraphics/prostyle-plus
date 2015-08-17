@@ -1,7 +1,7 @@
 /// <reference path="../../../ts/prostyle.d.ts" />
 /// <reference path="BarDataVariableType.ts" />
 
-module ProStyle.Extensions.Items.SimpleBarChart {
+module ProStyle.Extensions.Items.BarChart {
 
     import Properties = ProStyle.Models.Properties;
     import Variables = Properties.Variables;

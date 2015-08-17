@@ -23,8 +23,8 @@ module.exports = function (grunt) {
             flow_stack: {
                 src: ["src/Flows/Stack/**/*.ts"], out: "js/prostyle.flow.stack.js"
             },
-            item_simpleBarChart: {
-                src: ["src/Items/SimpleBarChart/**/*.ts"], out: "js/prostyle.item.simplebarchart.js"
+            item_barChart: {
+                src: ["src/Items/BarChart/**/*.ts"], out: "js/prostyle.item.barchart.js"
             }
         },
         closurecompiler: {
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
             },
             items: {
                 files: {
-                    "js/prostyle.item.simplebarchart.min.js": "js/prostyle.item.simplebarchart.js"
+                    "js/prostyle.item.barchart.min.js": "js/prostyle.item.barchart.js"
                 }
             }
         },

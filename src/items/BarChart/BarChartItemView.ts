@@ -1,12 +1,12 @@
 /// <reference path="../../../ts/prostyle.d.ts" />
-/// <reference path="SimpleBarChartItemModel.ts" />
+/// <reference path="BarChartItemModel.ts" />
 
-module ProStyle.Extensions.Items.SimpleBarChart {
+module ProStyle.Extensions.Items.BarChart {
 
     import Views = ProStyle.Views;
     import Util = ProStyle.Util;
 
-    export class SimpleBarChartItemView extends Views.Items.ItemView {
+    export class BarChartItemView extends Views.Items.ItemView {
 
         private g: SVGGElement;
         private barDivs: SVGRectElement[] = [];
@@ -22,7 +22,7 @@ module ProStyle.Extensions.Items.SimpleBarChart {
         private domainBase = 0;  //The baseline for bars (values above this go up, below go down)
         private rangeBase = 0;   //The baseline in pixels from the top
 
-        constructor(public model: SimpleBarChartItemModel, itemViewSet: Views.IItemViewSet) {
+        constructor(public model: BarChartItemModel, itemViewSet: Views.IItemViewSet) {
             super(model, itemViewSet, Util.createChildSvgElement(itemViewSet.div, "svg", {"class": "prostyle"}));
             this.g = <SVGGElement>Util.createChildSvgElement(this.element, "g");
             for (var c = 0; c < model.bars; c++) {
