@@ -1,7 +1,7 @@
 /// <reference path="../../../ts/prostyle.d.ts" />
-/// <reference path="PageStackFlowModel.ts" />
+/// <reference path="StackFlowModel.ts" />
 
-module ProStyle.Extensions.Flows.PageStack {
+module ProStyle.Extensions.Flows.Stack {
 
     import Models = ProStyle.Models;
     import Scripts = ProStyle.Models.Scripts;
@@ -18,8 +18,8 @@ module ProStyle.Extensions.Flows.PageStack {
         //
         // Configuration specific to stack flows
         //
-        var stacks = Types.Stacks.fromJson(Util.getSetup(json, "stacks") || PageStackFlowModel.defaultStacksJson);
+        var stacks = Types.Stacks.fromJson(Util.getSetup(json, "stacks") || StackFlowModel.defaultStacksJson);
 
-        return new PageStackFlowModel(story, placement, Util.getSetup(json, "defaultPageClass"), pageAspectRatio, stacks);
+        return new StackFlowModel(story, placement, Util.getSetup(json, "defaultPageClass"), pageAspectRatio, stacks);
     }
 }

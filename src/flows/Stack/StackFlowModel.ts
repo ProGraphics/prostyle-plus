@@ -1,10 +1,10 @@
 /// <reference path="../../../ts/prostyle.d.ts" />
 
-module ProStyle.Extensions.Flows.PageStack {
+module ProStyle.Extensions.Flows.Stack {
 
     import Models = ProStyle.Models;
 
-    export class PageStackFlowModel extends Models.Flows.PlacementFlowModel {
+    export class StackFlowModel extends Models.Flows.PlacementFlowModel {
 
         public static defaultStacksJson = {
             current: {
@@ -45,15 +45,15 @@ module ProStyle.Extensions.Flows.PageStack {
                     pageAspectRatio: number,
                     public stacks: Types.Stacks) {
 
-            super(story, "pageStack", placement, defaultPageClass, pageAspectRatio, "stackedpage");
+            super(story, "stack", placement, defaultPageClass, pageAspectRatio, "stackedpage");
         }
         
         public serialize(): any {
-            return PageStack.serialize(this);
+            return Stack.serialize(this);
         }
         
-        public createView(camera: Views.CameraView, flowIndex: number): PageStackFlowView {
-            return new PageStackFlowView(this, camera, flowIndex);
+        public createView(camera: Views.CameraView, flowIndex: number): StackFlowView {
+            return new StackFlowView(this, camera, flowIndex);
         }
     }
 }

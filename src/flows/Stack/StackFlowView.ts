@@ -1,20 +1,20 @@
 /// <reference path="../../../ts/prostyle.d.ts" />
-/// <reference path="PageStackFlowModel.ts" />
+/// <reference path="StackFlowModel.ts" />
 
-module ProStyle.Extensions.Flows.PageStack {
+module ProStyle.Extensions.Flows.Stack {
 
     import Models = ProStyle.Models;
     import Views = ProStyle.Views;
 
-    export class PageStackFlowView extends Views.Flows.PlacementFlowView {
+    export class StackFlowView extends Views.Flows.PlacementFlowView {
 
-        constructor(private pageStackFlow: PageStackFlowModel, camera: Views.CameraView, flowIndex: number) {
-            super(pageStackFlow, camera, flowIndex);
+        constructor(private stackFlow: StackFlowModel, camera: Views.CameraView, flowIndex: number) {
+            super(stackFlow, camera, flowIndex);
         }
 
         public initializePages(timeline: TimelineMax) {
 
-            var pageSize = this.camera.size.getContainedSize(this.pageStackFlow.pageAspectRatio);
+            var pageSize = this.camera.size.getContainedSize(this.stackFlow.pageAspectRatio);
 
             this.pages.forEach((pageElem: Views.PageView, index: number) => {
                 var css = {
@@ -27,13 +27,13 @@ module ProStyle.Extensions.Flows.PageStack {
         }
 
         public generatePageMovement(timeline: TimelineMax, label: string, pageIndex: number) {
-            var current = this.pageStackFlow.stacks.current;
-            var future = this.pageStackFlow.stacks.future;
-            var futureOffset = this.pageStackFlow.stacks.futureOffset;
-            var past = this.pageStackFlow.stacks.past;
-            var pastOffset = this.pageStackFlow.stacks.pastOffset;
+            var current = this.stackFlow.stacks.current;
+            var future = this.stackFlow.stacks.future;
+            var futureOffset = this.stackFlow.stacks.futureOffset;
+            var past = this.stackFlow.stacks.past;
+            var pastOffset = this.stackFlow.stacks.pastOffset;
 
-            var pageSize = this.camera.size.getContainedSize(this.pageStackFlow.pageAspectRatio);
+            var pageSize = this.camera.size.getContainedSize(this.stackFlow.pageAspectRatio);
 
             var css = current.renderCss(pageSize);
             this.applyCss(timeline, this.pages[pageIndex].div, label, 1, css, Expo.easeOut);

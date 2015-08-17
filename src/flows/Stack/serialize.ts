@@ -1,13 +1,13 @@
 /// <reference path="../../../ts/prostyle.d.ts" />
-/// <reference path="PageStackFlowModel.ts" />
+/// <reference path="StackFlowModel.ts" />
 
-module ProStyle.Extensions.Flows.PageStack {
+module ProStyle.Extensions.Flows.Stack {
 
     import Models = ProStyle.Models;
     import Scripts = ProStyle.Models.Scripts;
     import Util = ProStyle.Util;
     
-    export function serialize(model: PageStackFlowModel): any  {
+    export function serialize(model: StackFlowModel): any  {
 
         //TODO: write the json configuration back out.
         // Important,

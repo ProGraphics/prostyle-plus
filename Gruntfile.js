@@ -20,8 +20,8 @@ module.exports = function (grunt) {
             controller_tap: {
                 src: ["src/Controllers/Tap/**/*.ts"], out: "js/prostyle.controller.tap.js"
             },
-            flow_pageStack: {
-                src: ["src/Flows/PageStack/**/*.ts"], out: "js/prostyle.flow.pagestack.js"
+            flow_stack: {
+                src: ["src/Flows/Stack/**/*.ts"], out: "js/prostyle.flow.stack.js"
             },
             item_simpleBarChart: {
                 src: ["src/Items/SimpleBarChart/**/*.ts"], out: "js/prostyle.item.simplebarchart.js"
@@ -42,7 +42,7 @@ module.exports = function (grunt) {
             },
             flows: {
                 files: {
-                    "js/prostyle.flow.pagestack.min.js": "js/prostyle.flow.pagestack.js"
+                    "js/prostyle.flow.stack.min.js": "js/prostyle.flow.stack.js"
                 }
             },
             items: {
