@@ -17,21 +17,18 @@ module ProStyle.Extensions.Items.BarChart {
             BarChartPropertyTypes._barPropertyTypes = [];
 
             var p = BarChartPropertyTypes._propertyTypes;
-            //p.push(Properties.Cache.ANCHOR);
             p.push(Properties.Cache.ANIMATION);
-            //p.push(Properties.Cache.BACKGROUND);
-            //p.push(Properties.Cache.BORDER);
-            //p.push(Properties.Cache.CORNERS);
+            p.push(Properties.Cache.CLASS);
             p.push(Properties.Cache.CROP_SVG);
             p.push(Properties.Cache.OPACITY);
             p.push(Properties.Cache.POSITION);
             p.push(Properties.Cache.ROTATION);
             p.push(Properties.Cache.SCALE);
             p.push(Properties.Cache.SKEW);
-            //p.push(Properties.Cache.TRANSFORM_ORIGIN);
 
             var p = BarChartPropertyTypes._barPropertyTypes;
             p.push(Properties.Cache.ANIMATION);
+            p.push(Properties.Cache.CLASS);
             p.push(new Properties.SvgFillPropertyType("rgba(0,0,0,0.5)"));
             p.push(Properties.Cache.OPACITY);
             p.push(Properties.Cache.SKEW);
