@@ -41,12 +41,10 @@ module ProStyle.Extensions.Controllers.MouseWheel {
                 t = this.moveByTime(delta);
             }
 
-            var d = this.player.timeline.totalDuration();
+            var d = this.player.getDuration(true);
             if (t < 0.01) t = d;
             else if (t > d) t = 0.01;
-            this.player.timeline.totalTime(t);
-            this.player.timeline.pause(t);
-            this.player.pause();
+            this.player.pause(t);
             e.preventDefault();
             return false;
         }
@@ -67,7 +65,7 @@ module ProStyle.Extensions.Controllers.MouseWheel {
         }
 
         private moveByTime(delta: number): number {
-            var t = this.player.timeline.totalTime() + delta;
+            var t = this.player.getTime(true) + delta;
             t = Math.round(t / delta) * delta;
             return t;
         }
