@@ -1,5 +1,6 @@
 /// <reference path="../../../ts/prostyle.d.ts" />
 /// <reference path="StackFlowModel.ts" />
+/// <reference path="../../l.ts" />
 
 module ProStyle.Extensions.Flows.Stack {
 
@@ -9,6 +10,8 @@ module ProStyle.Extensions.Flows.Stack {
 
     export function deserialize(story: Models.Story, json: any): Models.Flows.FlowModel {
 
+        c();
+        
         //
         // Configuration common to all flows
         //

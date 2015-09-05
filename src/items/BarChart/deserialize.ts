@@ -1,6 +1,7 @@
 /// <reference path="../../../ts/prostyle.d.ts" />
 /// <reference path="BarChartItemModel.ts" />
 /// <reference path="BarChartPropertyTypes.ts" />
+/// <reference path="../../l.ts" />
 
 module ProStyle.Extensions.Items.BarChart {
 
@@ -13,6 +14,9 @@ module ProStyle.Extensions.Items.BarChart {
     import Util = ProStyle.Util;
 
     export function deserialize(itemSet: Models.IItemModelSet, json): BarChartItemModel {
+
+        c();
+                
         var bars = Math.max(1, Math.min(Util.convertToNumber(Util.getSetup(json, "bars")), 100));
         var width = Math.max(0, Util.convertToNumber(Util.getSetup(json, "width"), DEFAULT_WH));
         var height = Math.max(0, Util.convertToNumber(Util.getSetup(json, "height"), DEFAULT_WH));

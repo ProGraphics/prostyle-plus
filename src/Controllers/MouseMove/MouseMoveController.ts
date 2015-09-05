@@ -47,7 +47,6 @@ module ProStyle.Extensions.Controllers.MouseMove {
             var rect = Util.getOffset(div);
             var pos = m.pageX - rect.left;
             var w = div.offsetWidth;
-            console.log(div,pos,w);
             this.player.seek(this.posToSeek(pos/w));
             m.stopPropagation();
             m.preventDefault();
