@@ -60,10 +60,10 @@ module ProStyle.Extensions.Controllers.Tap {
             this.canvas = canvas;
             this.player = player;
             
-            this.backDiv = ProStyle.Util.createChildDivElement(this.canvas.frame.div);
-            this.playDiv = ProStyle.Util.createChildDivElement(this.canvas.frame.div);
-            this.nextDiv = ProStyle.Util.createChildDivElement(this.canvas.frame.div);
-            this.seekDiv = ProStyle.Util.createChildDivElement(this.canvas.frame.div);
+            this.backDiv = ProStyle.Util.createChildDivElement(this.canvas.frame.div, "tap-back");
+            this.playDiv = ProStyle.Util.createChildDivElement(this.canvas.frame.div, "tap-play");
+            this.nextDiv = ProStyle.Util.createChildDivElement(this.canvas.frame.div, "tap-next");
+            this.seekDiv = ProStyle.Util.createChildDivElement(this.canvas.frame.div, "tap-seek");
             this.player.stateChanged.on(this.stateChangedBound);
             this.resize();
             
