@@ -23,6 +23,6 @@ module ProStyle.Extensions.Flows.Stack {
         //
         var stacks = Types.Stacks.fromJson(Util.getSetup(json, "stacks") || StackFlowModel.defaultStacksJson);
 
-        return new StackFlowModel(story, placement, Util.getSetup(json, "defaultPageClass"), pageAspectRatio, stacks);
+        return new StackFlowModel(story, placement, Util.getSetup(json, "pageClass"), pageAspectRatio, stacks);
     }
 }

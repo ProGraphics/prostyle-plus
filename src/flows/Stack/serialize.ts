@@ -16,7 +16,7 @@ module ProStyle.Extensions.Flows.Stack {
 
         var json: any = {};
         json.setup = {};
-        if (model.pageClass !== undefined) json.setup.defaultPageClass = model.pageClass;
+        if (model.overriddenPageClass !== undefined) json.setup.pageClass = model.overriddenPageClass;
         return json;
     }
 }
