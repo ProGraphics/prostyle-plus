@@ -41,11 +41,11 @@ module ProStyle.Extensions.Flows.Stack {
 
         constructor(story: Models.Story,
                     placement: Types.Placement,
-                    defaultPageClass: string,
+                    pageClass: string,
                     pageAspectRatio: number,
                     public stacks: Types.Stacks) {
 
-            super(story, "stack", placement, defaultPageClass, pageAspectRatio, "stackedpage");
+            super(story, "stack", placement, pageClass, pageAspectRatio, "stackedpage");
         }
         
         public serialize(): any {
