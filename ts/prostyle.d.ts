@@ -399,6 +399,7 @@ declare module ProStyle.Views {
         size: Types.Size;
         fullScreen: boolean;
         constructor(story: Models.Story, div: HTMLDivElement);
+        private static duplicateDiv(div);
         startControllers(): void;
         stopControllers(): void;
         resize(force?: boolean): void;
@@ -564,8 +565,13 @@ declare module ProStyle.Extensions.Controllers.Track {
         private scrubberProgressClass;
         private scrubberHoverPointClass;
         private scrubberHoverTextClass;
+        private scrubberMouseMoveBound;
+        private scrubberMouseClickBound;
+        private progressChangedBound;
+        private stateChangedBound;
         private progress;
         constructor(canvas: Views.CanvasView, player: Play.IPlayer, controller: TrackController);
+        stop(): void;
         private setupButtons();
         private setupScrubber();
         private scrubberMouseMove(e);

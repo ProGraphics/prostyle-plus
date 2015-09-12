@@ -9,7 +9,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        proVersion: "0.20.0",
+        proVersion: "1.0.0",
         ts: {
             controller_mouseMove: {
                 src: ["src/Controllers/MouseMove/**/*.ts"], out: "js/prostyle.controller.mousemove.js"
