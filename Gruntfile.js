@@ -8,8 +8,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-ts");
 
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        proVersion: "1.1.0",
+        pkg: grunt.file.readJSON('../prostyle.js/package.json'),
         ts: {
             controller_mouseMove: {
                 src: ["src/Controllers/MouseMove/**/*.ts"], out: "js/prostyle.controller.mousemove.js"
@@ -55,7 +54,7 @@ module.exports = function (grunt) {
             banner: {
                 options: {
                     banner: '/*!\n' +
-                    ' * VERSION: <%= proVersion %>\n' +
+                    ' * VERSION: <%= pkg.version %>\n' +
                     ' * DATE: <%= grunt.template.today("dd-mmm-yyyy") %>\n' +
                     ' * UPDATES AND DOCS AT: https://prostyle.io/plus/\n' +
                     ' * \n' +
